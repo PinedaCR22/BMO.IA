@@ -1,5 +1,7 @@
+// src/components/SliderComponent.tsx
 import { FC } from 'react';
 import Slider from 'react-slick';
+import { motion, Variants } from 'framer-motion';
 import portadaBMO from '../Images/portadaBMO.jpg';
 
 interface Slide {
@@ -24,6 +26,12 @@ const slides: Slide[] = [
   },
 ];
 
+// fadeInUp variante (igual que en Cards)
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const SliderComponent: FC<SliderProps> = ({ isLightMode }) => {
   const settings = {
     dots: true,
@@ -39,7 +47,14 @@ const SliderComponent: FC<SliderProps> = ({ isLightMode }) => {
     <div className="relative w-11/12 md:w-9/12 mx-auto my-8">
       <Slider {...settings}>
         {slides.map((slide, index) => (
-          <div key={index}>
+          <motion.div
+            key={index}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1 }} // animación lenta y notoria
+          >
             <div
               className={`flex flex-col md:flex-row rounded-lg shadow-lg overflow-hidden transition-colors duration-500 ${
                 isLightMode ? 'bg-white text-gray-900' : 'bg-gray-800 text-white'
@@ -57,7 +72,7 @@ const SliderComponent: FC<SliderProps> = ({ isLightMode }) => {
                 <p>{slide.description}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </Slider>
     </div>

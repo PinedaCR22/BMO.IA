@@ -1,6 +1,8 @@
+// src/components/Cards.tsx
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHistory, FaLightbulb, FaHandsHelping } from 'react-icons/fa';
+import { motion, Variants } from 'framer-motion';
 import { JSX } from 'react/jsx-runtime';
 
 interface CardInfo {
@@ -20,23 +22,35 @@ const cardData: CardInfo[] = [
     description:
       'Conoce el origen y evolución de nuestra plataforma de soporte técnico impulsado por IA.',
     link: '/historia',
-    icon: <FaHistory className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />,
+    icon: (
+      <FaHistory className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
+    ),
   },
   {
     title: 'Beneficios',
     description:
       'Descubre cómo nuestro soporte automatizado puede ayudarte a resolver problemas de forma eficiente.',
     link: '/beneficios',
-    icon: <FaLightbulb className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />,
+    icon: (
+      <FaLightbulb className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
+    ),
   },
   {
     title: 'Aportes',
     description:
       'Entérate de cómo contribuimos al avance de la asistencia técnica y el aprendizaje de la IA.',
     link: '/aportes',
-    icon: <FaHandsHelping className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />,
+    icon: (
+      <FaHandsHelping className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
+    ),
   },
 ];
+
+// Variantes de animación: fade in y slide up
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const Cards: FC<CardsProps> = ({ isLightMode }) => {
   return (
@@ -47,11 +61,16 @@ const Cards: FC<CardsProps> = ({ isLightMode }) => {
     >
       <div className="grid gap-14 md:grid-cols-3">
         {cardData.map((card, index) => (
-          <div
+          <motion.div
             key={index}
             className={`group rounded-2xl shadow-2xl p-10 h-full flex flex-col justify-between items-center text-center transition-all duration-300 hover:shadow-3xl ${
               isLightMode ? 'bg-white text-black' : 'bg-gray-800 text-white'
             }`}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1 }} // <-- aquí ajustamos la velocidad
           >
             <div className="mb-6">{card.icon}</div>
             <h2 className="text-3xl font-bold mb-4">{card.title}</h2>
@@ -62,7 +81,7 @@ const Cards: FC<CardsProps> = ({ isLightMode }) => {
             >
               Más información
             </Link>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

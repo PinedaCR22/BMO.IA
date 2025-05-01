@@ -72,7 +72,7 @@ const Chat: React.FC = () => {
         </div>
 
         <div className="p-6">
-          <h1 className="text-3xl font-bold text-center mb-1">BMO.IA</h1>
+          <h1 className="text-3xl font-bold text-center mb-1">¡Hola soy BMO!</h1>
           <p className="text-center text-sm mb-6">Tu asistente virtual</p>
 
           <div className="space-y-3 mb-6 max-h-96 overflow-y-auto">
@@ -88,7 +88,7 @@ const Chat: React.FC = () => {
                 <strong>{msg.role === 'user' ? 'Tú' : 'IA'}:</strong> {msg.content}
               </div>
             ))}
-            {loading && <p className="text-gray-500 text-sm">IA está escribiendo...</p>}
+            {loading && <p className="text-gray-500 text-sm">BMO está escribiendo...</p>}
           </div>
 
           <div className="flex gap-2">
