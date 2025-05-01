@@ -1,18 +1,31 @@
+// src/components/ChatIA.tsx
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { FaRobot } from 'react-icons/fa';
+import { motion, Variants } from 'framer-motion';
 
 interface ChatIAProps {
   isLightMode: boolean;
 }
 
+// Variantes de animación: fade in y slide up
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const ChatIA: FC<ChatIAProps> = ({ isLightMode }) => {
   return (
-    <section
+    <motion.section
       id="next-section"
       className={`w-full min-h-[fit-content] py-20 px-4 transition-colors duration-500 overflow-hidden ${
         isLightMode ? 'bg-gray-100 text-black' : 'bg-gray-900 text-white'
       }`}
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 1 }} // animación más lenta y notoria
     >
       <div
         className={`max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ${
@@ -55,7 +68,7 @@ const ChatIA: FC<ChatIAProps> = ({ isLightMode }) => {
           </Link>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
