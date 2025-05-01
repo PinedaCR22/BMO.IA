@@ -1,99 +1,128 @@
-// src/components/Header.tsx
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FaMoon, FaSun, FaBars } from 'react-icons/fa';
 
-const Header: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+interface HeaderProps {
+  isLightMode: boolean;
+  toggleMode: () => void;
+}
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen)
-  }
+const Header: React.FC<HeaderProps> = ({ isLightMode, toggleMode }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const handleToggle = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="bg-teal-600 text-white w-full">
-      <nav className="w-full px-8 flex items-center justify-between py-8">
-        {/* Logo extremo izquierdo */}
-        <div className="text-2xl font-bold">
-          <Link to="/">BMO.IA</Link>
+    <header
+      className={`w-full z-50 transition-colors duration-500 ${
+        isLightMode ? 'bg-teal-700 text-white' : 'bg-gray-900 text-white'
+      }`}
+    >
+      <nav className="flex justify-between items-center px-4 py-6">
+        {/* IZQUIERDA: Logo y modo oscuro */}
+        <div className="flex items-center gap-3">
+          <Link to="/" className="text-2xl font-bold">
+            BMO.IA
+          </Link>
+          <button
+            onClick={toggleMode}
+            className={`text-xl transition-colors duration-300 ${
+              isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
+            }`}
+            aria-label="Toggle Mode"
+          >
+            {isLightMode ? <FaMoon /> : <FaSun />}
+          </button>
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 text-lg font-medium">
-          <Link to="/aportes" className="hover:text-gray-200">
+        {/* DERECHA: Desktop */}
+        <div className="hidden md:flex items-center gap-6 text-lg font-medium">
+          <Link
+            to="/aportes"
+            className={`transition-colors duration-300 ${
+              isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
+            }`}
+          >
             Aportes
           </Link>
-          <Link to="/historia" className="hover:text-gray-200">
+          <Link
+            to="/historia"
+            className={`transition-colors duration-300 ${
+              isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
+            }`}
+          >
             Historia
           </Link>
-          <Link to="/beneficios" className="hover:text-gray-200">
+          <Link
+            to="/beneficios"
+            className={`transition-colors duration-300 ${
+              isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
+            }`}
+          >
             Beneficios
           </Link>
           <Link
             to="/chat"
-            className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded text-lg font-semibold"
+            className="bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 transition"
           >
             Chat IA
           </Link>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* MENÚ HAMBURGUESA (mobile) */}
         <div className="md:hidden">
-          <button onClick={toggleMobileMenu} className="focus:outline-none">
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+          <button
+            onClick={handleToggle}
+            className={`text-2xl transition-colors duration-300 ${
+              isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
+            }`}
+            aria-label="Abrir menú"
+          >
+            <FaBars />
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-teal-600">
-          <div className="px-8 py-4 flex flex-col space-y-4">
-            <Link
-              to="/aportes"
-              className="hover:text-gray-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Aportes
-            </Link>
-            <Link
-              to="/historia"
-              className="hover:text-gray-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Historia
-            </Link>
-            <Link
-              to="/beneficios"
-              className="hover:text-gray-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Beneficios
-            </Link>
-            <Link
-              to="/chat"
-              className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded text-lg font-semibold"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Chat IA
-            </Link>
-          </div>
+      {/* MENÚ MÓVIL (flujo normal) */}
+      {menuOpen && (
+        <div className="md:hidden px-4 py-6 flex flex-col gap-4 items-center bg-inherit text-inherit shadow-md">
+          <Link
+            to="/aportes"
+            className={`transition-colors duration-300 ${
+              isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            Aportes
+          </Link>
+          <Link
+            to="/historia"
+            className={`transition-colors duration-300 ${
+              isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            Historia
+          </Link>
+          <Link
+            to="/beneficios"
+            className={`transition-colors duration-300 ${
+              isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            Beneficios
+          </Link>
+          <Link
+            to="/chat"
+            className="bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 transition"
+            onClick={() => setMenuOpen(false)}
+          >
+            Chat IA
+          </Link>
         </div>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
