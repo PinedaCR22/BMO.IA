@@ -1,35 +1,59 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom'; 
-import portadaBMO from '../Images/portadaBMO.jpg'; 
+import { Link } from 'react-router-dom';
+import { FaRobot } from 'react-icons/fa';
 
-const ChatIA: FC = () => {
+interface ChatIAProps {
+  isLightMode: boolean;
+}
+
+const ChatIA: FC<ChatIAProps> = ({ isLightMode }) => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center my-10 mx-auto max-w-5xl bg-white rounded-lg shadow-lg overflow-hidden">
-      {/* Imagen a la izquierda */}
-      <div className="w-full md:w-1/2 h-64 md:h-auto">
-        <img
-          src={portadaBMO}
-          alt="Portada BMO"
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <section
+      id="next-section"
+      className={`w-full min-h-[fit-content] py-20 px-4 transition-colors duration-500 overflow-hidden ${
+        isLightMode ? 'bg-gray-100 text-black' : 'bg-gray-900 text-white'
+      }`}
+    >
+      <div
+        className={`max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ${
+          isLightMode
+            ? 'bg-white border-4 border-teal-500'
+            : 'bg-gray-800 border-4 border-teal-600'
+        }`}
+      >
+        {/* LADO IZQUIERDO - TEXTO INFORMATIVO */}
+        <div className="p-10 flex flex-col justify-center items-start">
+          <h3 className="text-3xl font-bold mb-4">
+            Soluciones modernas con IA
+          </h3>
+          <p
+            className={`text-lg leading-relaxed ${
+              isLightMode ? 'text-black' : 'text-gray-300'
+            }`}
+          >
+            Nuestra plataforma está diseñada para ofrecer soporte técnico inteligente,
+            accesible, y rápido mediante inteligencia artificial.
+          </p>
+        </div>
 
-      {/* Contenido (texto y botón) a la derecha */}
-      <div className="w-full md:w-1/2 p-6 flex flex-col justify-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Chat con IA</h2>
-        <p className="text-gray-700 mb-6 leading-relaxed">
-          Haz tus consultas de soporte técnico y obtén respuestas 
-          instantáneas con nuestra IA inteligente. ¡Tu solución 
-          está a solo un mensaje de distancia!
-        </p>
-        
-        {/* Botón de acción */}
-        <Link
-          to="/chat"
-          className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-6 rounded transition-colors"
-        >
-          Comenzar
-        </Link>
+        {/* LADO DERECHO - CARD DE CHAT */}
+        <div className="p-10 flex flex-col items-center justify-center text-center border-t md:border-t-0 md:border-l border-gray-300 dark:border-gray-700">
+          <FaRobot className="text-5xl text-teal-500 animate-pulse mb-4" />
+          <h2 className="text-2xl font-bold mb-3">¿Necesitás ayuda técnica?</h2>
+          <p
+            className={`mb-6 leading-relaxed ${
+              isLightMode ? 'text-black' : 'text-gray-300'
+            }`}
+          >
+            Consultá cualquier duda con nuestra IA inteligente. Obtené soluciones inmediatas y sin complicaciones.
+          </p>
+          <Link
+            to="/chat"
+            className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-6 rounded transition"
+          >
+            Iniciar Chat
+          </Link>
+        </div>
       </div>
     </section>
   );

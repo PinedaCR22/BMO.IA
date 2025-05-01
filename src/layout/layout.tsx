@@ -1,21 +1,36 @@
-// src/layout/Layout.tsx
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import React, { useState, createContext } from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+export const LightModeContext = createContext({
+  isLightMode: true,
+  toggleMode: () => {},
+});
 
 const Layout: React.FC = () => {
+  const [isLightMode, setIsLightMode] = useState(true);
+  const toggleMode = () => setIsLightMode((prev) => !prev);
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      
-      <main className="flex-grow">
-        <Outlet />
-      </main>
+    <LightModeContext.Provider value={{ isLightMode, toggleMode }}>
+      <div
+        className={`flex flex-col min-h-screen transition-colors duration-500 ${
+          isLightMode ? 'bg-white text-black' : 'bg-gray-900 text-white'
+        }`}
+      >
+        {/* Header completamente pegado al top */}
+        <Header isLightMode={isLightMode} toggleMode={toggleMode} />
 
-      <Footer />
-    </div>
-  )
-}
+        {/* Main sin espacio entre secciones */}
+        <main className="flex-grow w-full">
+          <Outlet context={{ isLightMode, toggleMode }} />
+        </main>
 
-export default Layout
+        <Footer />
+      </div>
+    </LightModeContext.Provider>
+  );
+};
+
+export default Layout;

@@ -1,30 +1,25 @@
-// src/routes.tsx
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Layout from './layout/layout'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './layout/layout';
 
 // Páginas
+import Aportes from './pages/Aportes';
+import Historia from './pages/Historia';
 
-import Aportes from './pages/Aportes'
-import Historia from './pages/Historia'
-import ChatIA from './pages/ChatIA'
-import HomePage from './pages/Homepage'
-import Beneficios from './pages/Beneficios'
+import HomePage from './pages/Homepage';
+import Beneficios from './pages/Beneficios';
+import ChatPage from './pages/Chatpage';
 
 const AppRoutes: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Ruta principal con Layout */}
         <Route path="/" element={<Layout />}>
-          {/* Página de inicio (index) */}
           <Route index element={<HomePage />} />
-
-          {/* Otras rutas */}
           <Route path="aportes" element={<Aportes />} />
           <Route path="historia" element={<Historia />} />
-          <Route path="chat" element={<ChatIA />} />
-          <Route path="beneficios" element={<Beneficios />} /> 
+          <Route path="chat" element={<ChatPage />} /> 
+          <Route path="beneficios" element={<Beneficios />} />
         </Route>
 
         <Route
@@ -37,7 +32,7 @@ const AppRoutes: React.FC = () => {
         />
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default AppRoutes
+export default AppRoutes;

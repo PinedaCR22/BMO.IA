@@ -1,28 +1,41 @@
-// src/components/Image.tsx
-import React from 'react'
-import portadaBMO from '../Images/portadaBMO.jpg' // Ajusta la ruta y extensión según tu archivo
+import React from 'react';
+import portadaBMO from '../Images/portadaBMO.jpg';
 
-const Image: React.FC = () => {
+interface ImageProps {
+  isLightMode: boolean;
+}
+
+const Image: React.FC<ImageProps> = ({ isLightMode }) => {
+  const handleScroll = () => {
+    const target = document.getElementById('next-section');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="relative w-full h-[50vh]">
+    <div
+      className={`relative w-full h-[50vh] transition-colors duration-500 overflow-hidden ${
+        isLightMode ? 'bg-white' : 'bg-gray-900'
+      }`}
+    >
       <img
         src={portadaBMO}
         alt="Portada BMO"
-        className="w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Contenedor absoluto para centrar texto y flechas */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        
-        {/* Texto en dos líneas con fondo negro semitransparente */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full">
         <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded text-center">
           Soporte técnico inteligente
           <br />
           con IA
         </h1>
-
-        {/* Flecha hacia abajo con animación de rebote */}
-        <div className="mt-4 animate-bounce text-white">
+        <button
+          onClick={handleScroll}
+          className="mt-4 animate-bounce text-white"
+          aria-label="Desplazar hacia abajo"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -33,10 +46,10 @@ const Image: React.FC = () => {
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
-        </div>
+        </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Image
+export default Image;
