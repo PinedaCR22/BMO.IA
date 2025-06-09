@@ -6,12 +6,13 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <h3 className="text-2xl font-bold mb-2">BMO.IA, tu plataforma inteligente</h3>
             <p className="text-gray-400">
-              Transformando la asistencia técnica con inteligencia artificial para un futuro más inteligente.
+              Transformando la asistencia técnica en computadoras <br /> 
+              con inteligencia artificial para un futuro más inteligente.
             </p>
           </div>
           <div className="mb-6 md:mb-0">
             <h4 className="text-xl font-semibold mb-2">Contacto</h4>
-            <p className="text-gray-400">Email: emmapr2233@gmail.com</p>
+            <p className="text-gray-400">Email: bmoia@gmail.com</p>
             <p className="text-gray-400">Tel: +506-8504-2171</p>
           </div>
           <div>

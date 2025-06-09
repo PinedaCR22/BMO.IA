@@ -1,5 +1,5 @@
 import React from 'react';
-import Chat from '../services/Chat';
+import Chat from '../components/Chat';
 
 
 const ChatPage: React.FC = () => {
