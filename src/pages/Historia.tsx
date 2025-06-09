@@ -21,9 +21,8 @@ const Historia: React.FC = () => {
 
   return (
     <motion.section
-      className={`min-h-screen px-6 py-20 transition-colors duration-500 ${
-        isLightMode ? 'bg-white text-gray-800' : 'bg-gray-900 text-gray-100'
-      }`}
+      className={`min-h-screen px-6 py-20 transition-colors duration-500 ${isLightMode ? 'bg-white text-gray-800' : 'bg-gray-900 text-gray-100'
+        }`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -37,10 +36,9 @@ const Historia: React.FC = () => {
         <FaHistory className="mx-auto text-teal-500 text-6xl mb-4" />
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Nuestra Historia</h1>
         <p className="mx-auto max-w-2xl text-lg leading-relaxed">
-          BMO.IA nació de la visión de ofrecer un soporte técnico accesible,
-          inmediato y personalizado. Desde sus primeros días, nuestro objetivo
-          ha sido democratizar el acceso a la asistencia técnica mediante
-          inteligencia artificial de última generación.
+          BMO.IA nació con el propósito de transformar la asistencia técnica en computadoras a través de inteligencia artificial avanzada.
+          Desde nuestros inicios, nos enfocamos en brindar soporte accesible, rápido y confiable para resolver problemas comunes y críticos en sistemas de escritorio y portátiles.
+          Nuestra evolución ha estado guiada por el compromiso de ofrecer soluciones técnicas precisas y personalizadas para usuarios individuales, técnicos y organizaciones.
         </p>
       </motion.div>
 
@@ -55,10 +53,10 @@ const Historia: React.FC = () => {
           <div>
             <h2 className="text-2xl font-semibold mb-2">Tecnología Avanzada</h2>
             <p className="leading-relaxed">
-              Empleamos modelos de lenguaje entrenados en millones de
-              conversaciones técnicas para ofrecer respuestas precisas y
-              contextuales en tiempo real.
+              Empleamos modelos de lenguaje entrenados en millones de casos reales de soporte técnico para computadoras.
+              Esto nos permite brindar diagnósticos automáticos, asistencia contextual y soluciones efectivas para errores de software, hardware y rendimiento.
             </p>
+
           </div>
         </motion.div>
 
@@ -71,9 +69,8 @@ const Historia: React.FC = () => {
           <div>
             <h2 className="text-2xl font-semibold mb-2">Enfoque en el Usuario</h2>
             <p className="leading-relaxed">
-              Cada interacción es una oportunidad para aprender y mejorar.
-              Recopilamos feedback para adaptar nuestras respuestas y ofrecer
-              una experiencia cada vez más personalizada.
+              Escuchamos a cada usuario, adaptando nuestras respuestas para cubrir necesidades reales como lentitud del sistema, fallos de red, problemas de arranque y más.
+              Nuestro sistema aprende de cada interacción para ofrecer un soporte cada vez más humano y eficiente.
             </p>
           </div>
         </motion.div>
@@ -96,22 +93,35 @@ const Historia: React.FC = () => {
               Mayo 2024: Lanzamiento Inicial
             </h3>
             <p className="mt-2 leading-relaxed">
-              Presentamos la primera versión de BMO.IA con funcionalidades básicas
-              de respuesta a preguntas.
+              Presentamos la primera versión de BMO.IA, centrada en resolver preguntas frecuentes relacionadas con errores comunes en computadoras personales.
             </p>
-          </div>
 
-          {/* Evento 2 */}
-          <div className="relative">
-            <div className="absolute left-0 top-1">
-              <FaClock className="text-teal-500 bg-white rounded-full p-1 text-xl" />
-            </div>
             <h3 className="pl-8 text-xl md:text-2xl font-bold">
               Octubre 2024: Mejoras de Modelo
             </h3>
             <p className="mt-2 leading-relaxed">
-              Integramos nuestro modelo con capacidad de entender contexto y
-              mantener el hilo de conversación.
+              Incorporamos comprensión contextual y memoria conversacional para mantener el seguimiento de problemas técnicos durante sesiones prolongadas de soporte.
+            </p>
+
+            <h3 className="pl-8 text-xl md:text-2xl font-bold">
+              Marzo 2025: Crecimiento de la Comunidad
+            </h3>
+            <p className="mt-2 leading-relaxed">
+              Más de 10.000 usuarios activos confiaron en nuestra IA para resolver fallos en sus equipos, desde pantallas congeladas hasta errores de sistema operativo.
+            </p>
+
+            <h3 className="pl-8 text-xl md:text-2xl font-bold">
+              Junio 2025: Soporte Multilenguaje
+            </h3>
+            <p className="mt-2 leading-relaxed">
+              Agregamos soporte para múltiples idiomas, facilitando la asistencia técnica a usuarios hispanohablantes, angloparlantes y otros perfiles globales.
+            </p>
+
+            <h3 className="pl-8 text-xl md:text-2xl font-bold">
+              Agosto 2025: Integración con Sistemas Externos
+            </h3>
+            <p className="mt-2 leading-relaxed">
+              Integramos conectores con plataformas de tickets, centros de datos y sistemas de gestión IT, facilitando el monitoreo y resolución automatizada de incidencias.
             </p>
           </div>
 
