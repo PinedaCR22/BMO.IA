@@ -20,7 +20,7 @@ const cardData: CardInfo[] = [
   {
     title: 'Historia',
     description:
-      'Conoce el origen y evolución de nuestra plataforma de soporte técnico impulsado por IA.',
+      'Conocé el origen y evolución de nuestra plataforma de soporte técnico especializado en computadoras, diseñada para asistir a usuarios con problemas cotidianos y complejos mediante el poder de la IA.',
     link: '/historia',
     icon: (
       <FaHistory className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
@@ -29,7 +29,7 @@ const cardData: CardInfo[] = [
   {
     title: 'Beneficios',
     description:
-      'Descubre cómo nuestro soporte automatizado puede ayudarte a resolver problemas de forma eficiente.',
+      'Descubrí cómo nuestro soporte automatizado puede ayudarte a resolver fallos de hardware y software, mejorar el rendimiento y prevenir errores de forma eficiente y autónoma.',
     link: '/beneficios',
     icon: (
       <FaLightbulb className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
@@ -38,7 +38,7 @@ const cardData: CardInfo[] = [
   {
     title: 'Aportes',
     description:
-      'Entérate de cómo contribuimos al avance de la asistencia técnica y el aprendizaje de la IA.',
+      'Enterate de cómo contribuimos al avance de la asistencia técnica para computadoras, promoviendo el aprendizaje automatizado y el acceso equitativo al soporte digital a través de IA.',
     link: '/aportes',
     icon: (
       <FaHandsHelping className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />

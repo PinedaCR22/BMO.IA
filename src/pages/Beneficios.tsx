@@ -32,9 +32,8 @@ const Beneficios: React.FC = () => {
 
   return (
     <motion.section
-      className={`min-h-screen px-6 py-20 transition-colors duration-500 ${
-        isLightMode ? 'bg-white text-gray-800' : 'bg-gray-900 text-gray-100'
-      }`}
+      className={`min-h-screen px-6 py-20 transition-colors duration-500 ${isLightMode ? 'bg-white text-gray-800' : 'bg-gray-900 text-gray-100'
+        }`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -48,20 +47,44 @@ const Beneficios: React.FC = () => {
         <FaLightbulb className="mx-auto text-teal-500 text-6xl mb-4" />
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Beneficios de BMO.IA</h1>
         <p className="mx-auto max-w-2xl text-lg leading-relaxed">
-          Descubrí cómo nuestro chat con IA transforma la asistencia técnica,
-          brindando ventajas únicas para cualquier usuario o empresa.
+          Descubrí cómo nuestra plataforma basada en inteligencia artificial revoluciona el soporte técnico para computadoras,
+          brindando soluciones inmediatas, efectivas y seguras tanto para usuarios domésticos como para técnicos especializados.
         </p>
       </motion.div>
 
       {/* Grid de Beneficios */}
       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 mb-20">
         {[
-          { icon: FaBolt, title: 'Respuestas Inmediatas', desc: 'Reduce tu tiempo de espera con respuestas al instante.' },
-          { icon: FaClock, title: 'Disponibilidad 24/7', desc: 'Acceso al soporte en cualquier momento, sin restricciones.' },
-          { icon: FaMobileAlt, title: 'Interfaz Amigable', desc: 'Un diseño intuitivo que facilita la interacción con la IA.' },
-          { icon: FaUserShield, title: 'Privacidad Segura', desc: 'Tus conversaciones están protegidas con altos estándares de seguridad.' },
-          { icon: FaLightbulb, title: 'Aprendizaje Constante', desc: 'La IA mejora con cada interacción para ofrecer mejores respuestas.' },
-          { icon: FaClock, title: 'Escalabilidad', desc: 'Se adapta a cualquier volumen de consultas sin perder rendimiento.' },
+          {
+            icon: FaBolt,
+            title: 'Diagnóstico Instantáneo',
+            desc: 'Detectá rápidamente errores comunes en tu computadora sin necesidad de esperar asistencia humana.',
+          },
+          {
+            icon: FaClock,
+            title: 'Soporte 24/7',
+            desc: 'Asistencia técnica constante, disponible en todo momento para resolver cualquier incidente en tu equipo.',
+          },
+          {
+            icon: FaMobileAlt,
+            title: 'Interfaz Amigable',
+            desc: 'Diseño intuitivo que facilita la interacción incluso para usuarios con pocos conocimientos técnicos.',
+          },
+          {
+            icon: FaUserShield,
+            title: 'Seguridad de la Información',
+            desc: 'Tus datos y consultas técnicas están protegidas mediante protocolos cifrados de alta seguridad.',
+          },
+          {
+            icon: FaLightbulb,
+            title: 'Mejora Continua',
+            desc: 'La IA aprende con cada diagnóstico, mejorando la precisión en la identificación de fallos técnicos.',
+          },
+          {
+            icon: FaClock,
+            title: 'Escalabilidad Inteligente',
+            desc: 'Capacidad de atender múltiples dispositivos y consultas simultáneas sin perder velocidad ni efectividad.',
+          },
         ].map(({ icon: Icon, title, desc }, idx) => (
           <motion.div
             key={idx}
@@ -83,36 +106,36 @@ const Beneficios: React.FC = () => {
         transition={{ duration: 1 }}
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
-          Cómo utilizar el chat de BMO.IA
+          Cómo utilizar el asistente de BMO.IA
         </h2>
         <ol className="list-decimal list-inside space-y-4">
           <li className="flex items-start">
             <FaKeyboard className="text-teal-500 mt-1 mr-3" />
             <span>
-              Abre la ruta{' '}
+              Ingresá a la sección{' '}
               <Link to="/chat" className="font-bold text-teal-500 hover:underline">
                 chat
               </Link>{' '}
-              desde el menú superior.
+              desde el menú principal.
             </span>
           </li>
           <li className="flex items-start">
             <FaPaperPlane className="text-teal-500 mt-1 mr-3" />
-            Escribe tu pregunta en el campo de texto.
+            Escribí tu consulta relacionada con tu computadora: errores del sistema, lentitud, programas que no abren, etc.
           </li>
           <li className="flex items-start">
             <FaCommentDots className="text-teal-500 mt-1 mr-3" />
             <span>
-              Haz clic en <strong>enviar</strong> o presiona <strong>Enter</strong>.
+              Hacé clic en <strong>Enviar</strong> o presioná <strong>Enter</strong> para obtener la respuesta.
             </span>
           </li>
           <li className="flex items-start">
             <FaCheckCircle className="text-teal-500 mt-1 mr-3" />
-            Revisa la respuesta generada por la IA.
+            Revisá la solución proporcionada por la IA y aplicá los pasos recomendados.
           </li>
           <li className="flex items-start">
             <FaSignOutAlt className="text-teal-500 mt-1 mr-3" />
-            Cuando finalices, cierra sesión con el botón correspondiente.
+            Cuando finalices tu sesión de soporte, podés cerrar sesión de forma segura desde el botón superior derecho.
           </li>
         </ol>
       </motion.div>

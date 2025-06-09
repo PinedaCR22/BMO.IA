@@ -15,14 +15,14 @@ interface SliderProps {
 
 const slides: Slide[] = [
   {
-    title: 'Nuestra Misión',
+    title: 'Nuestra misión',
     description:
-      'Brindar asistencia rápida y confiable en preguntas de soporte técnico a través de una IA avanzada.',
+      'Brindar asistencia técnica confiable, rápida y especializada en computadoras, resolviendo dudas y problemas mediante inteligencia artificial avanzada y atención personalizada.',
   },
   {
-    title: 'Nuestra Visión',
+    title: 'Nuestra visión',
     description:
-      'Convertirnos en la plataforma líder en soporte técnico automatizado con soluciones innovadoras.',
+      'Convertirnos en la plataforma líder en soporte técnico automatizado para computadoras, ofreciendo atención inteligente y soluciones innovadoras que optimicen el rendimiento de los equipos informáticos.',
   },
 ];
 

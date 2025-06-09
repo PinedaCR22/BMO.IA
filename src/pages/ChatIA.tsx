@@ -44,8 +44,9 @@ const ChatIA: FC<ChatIAProps> = ({ isLightMode }) => {
               isLightMode ? 'text-black' : 'text-gray-300'
             }`}
           >
-            Nuestra plataforma está diseñada para ofrecer soporte técnico inteligente,
-            accesible, y rápido mediante inteligencia artificial.
+            Nuestra plataforma está diseñada para ofrecer soporte técnico inteligente, accesible y rápido para equipos de cómputo, 
+            ayudando a resolver fallos comunes, optimizar el sistema y mantener la seguridad de los dispositivos mediante inteligencia
+            artificial.
           </p>
         </div>
 
@@ -58,7 +59,8 @@ const ChatIA: FC<ChatIAProps> = ({ isLightMode }) => {
               isLightMode ? 'text-black' : 'text-gray-300'
             }`}
           >
-            Consultá cualquier duda con nuestra IA inteligente. Obtené soluciones inmediatas y sin complicaciones.
+            Consultá cualquier duda relacionada con tu computadora con nuestra IA inteligente. Obtené soluciones inmediatas y 
+            sin complicaciones para errores del sistema, lentitud, virus y más.
           </p>
           <Link
             to="/chat"
