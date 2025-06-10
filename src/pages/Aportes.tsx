@@ -10,6 +10,7 @@ import {
   FaExpandArrowsAlt,
   FaSync
 } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const containerVariants: Variants = {
   hidden: {},
@@ -25,70 +26,43 @@ const fadeInUp: Variants = {
 
 const Aportes: React.FC = () => {
   const { isLightMode } = useOutletContext<{ isLightMode: boolean }>();
+  const { t } = useTranslation('aportes');
+
+  const iconList = [
+    <FaBolt className="text-teal-500 text-5xl mb-4" />,
+    <FaClock className="text-teal-500 text-5xl mb-4" />,
+    <FaCogs className="text-teal-500 text-5xl mb-4" />,
+    <FaShieldAlt className="text-teal-500 text-5xl mb-4" />,
+    <FaExpandArrowsAlt className="text-teal-500 text-5xl mb-4" />,
+    <FaSync className="text-teal-500 text-5xl mb-4" />
+  ];
+
+  const items = t('items', { returnObjects: true }) as { title: string; desc: string }[];
 
   return (
     <motion.section
-      className={`min-h-screen px-6 py-20 transition-colors duration-500 ${isLightMode ? 'bg-white text-gray-800' : 'bg-gray-900 text-gray-100'
-        }`}
+      className={`min-h-screen px-6 py-20 transition-colors duration-500 ${
+        isLightMode ? 'bg-white text-gray-800' : 'bg-gray-900 text-gray-100'
+      }`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      {/* Encabezado */}
-      <motion.div
-        className="text-center mb-16"
-        variants={fadeInUp}
-        transition={{ duration: 1 }}
-      >
+      <motion.div className="text-center mb-16" variants={fadeInUp}>
         <FaHandsHelping className="mx-auto text-teal-500 text-6xl mb-4" />
-        <h1 className="text-4xl font-bold mb-4">Nuestros aportes</h1>
-        <p className="mx-auto max-w-2xl text-lg leading-relaxed">
-          Descubrí cómo BMO.IA aporta valor al resolver tus dudas técnicas de forma rápida,
-          constante y adaptada a tus necesidades.
-        </p>
+        <h1 className="text-4xl font-bold mb-4">{t('titulo')}</h1>
+        <p className="mx-auto max-w-2xl text-lg leading-relaxed">{t('descripcion')}</p>
       </motion.div>
 
-      {/* Grid de aportes */}
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 px-4">
-        {[
-          {
-            icon: <FaBolt className="text-teal-500 text-5xl mb-4" />,
-            title: 'Eficiencia operativa',
-            desc: 'Respuestas optimizadas para resolver fallos comunes en computadoras, como errores del sistema, fallos de conexión y programas congelados.'
-          },
-          {
-            icon: <FaClock className="text-teal-500 text-5xl mb-4" />,
-            title: 'Soporte ininterrumpido',
-            desc: 'Accedé a diagnósticos y soluciones para tu equipo las 24 horas del día, sin necesidad de asistencia humana.'
-          },
-          {
-            icon: <FaCogs className="text-teal-500 text-5xl mb-4" />,
-            title: 'Respuestas personalizadas',
-            desc: 'La IA analiza tu caso específico para darte pasos adecuados según el tipo de dispositivo, sistema operativo y tipo de fallo técnico.'
-          },
-          {
-            icon: <FaShieldAlt className="text-teal-500 text-5xl mb-4" />,
-            title: 'Seguridad informática',
-            desc: 'Tus consultas sobre errores técnicos y estado del sistema se manejan con total confidencialidad bajo protocolos seguros.'
-          },
-          {
-            icon: <FaExpandArrowsAlt className="text-teal-500 text-5xl mb-4" />,
-            title: 'Adaptabilidad técnica',
-            desc: 'Nuestro sistema gestiona múltiples solicitudes simultáneas, desde usuarios domésticos hasta empresas con cientos de equipos.'
-          },
-          {
-            icon: <FaSync className="text-teal-500 text-5xl mb-4" />,
-            title: 'Mejora continua',
-            desc: 'Cada interacción contribuye al aprendizaje del sistema, mejorando su precisión al identificar y resolver fallos informáticos complejos.'
-          }
-        ].map(({ icon, title, desc }, index) => (
+        {items.map(({ title, desc }, index) => (
           <motion.div
             key={index}
             className="flex flex-col items-center text-center"
             variants={fadeInUp}
             transition={{ duration: 1 }}
           >
-            {icon}
+            {iconList[index]}
             <h2 className="text-2xl font-semibold mb-2">{title}</h2>
             <p>{desc}</p>
           </motion.div>

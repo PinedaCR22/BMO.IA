@@ -1,30 +1,12 @@
-// src/components/SliderComponent.tsx
 import { FC } from 'react';
 import Slider from 'react-slick';
 import { motion, Variants } from 'framer-motion';
 import portadaBMO from '../Images/portadaBMO.jpg';
-
-interface Slide {
-  title: string;
-  description: string;
-}
+import { useTranslation } from 'react-i18next';
 
 interface SliderProps {
   isLightMode: boolean;
 }
-
-const slides: Slide[] = [
-  {
-    title: 'Nuestra misión',
-    description:
-      'Brindar asistencia técnica confiable, rápida y especializada en computadoras, resolviendo dudas y problemas mediante inteligencia artificial avanzada y atención personalizada.',
-  },
-  {
-    title: 'Nuestra visión',
-    description:
-      'Convertirnos en la plataforma líder en soporte técnico automatizado para computadoras, ofreciendo atención inteligente y soluciones innovadoras que optimicen el rendimiento de los equipos informáticos.',
-  },
-];
 
 // fadeInUp variante (igual que en Cards)
 const fadeInUp: Variants = {
@@ -33,6 +15,13 @@ const fadeInUp: Variants = {
 };
 
 const SliderComponent: FC<SliderProps> = ({ isLightMode }) => {
+  const { t } = useTranslation('slider');
+
+  const slides = t('slides', { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+  }>;
+
   const settings = {
     dots: true,
     infinite: true,
@@ -40,7 +29,7 @@ const SliderComponent: FC<SliderProps> = ({ isLightMode }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 5000
   };
 
   return (
@@ -53,7 +42,7 @@ const SliderComponent: FC<SliderProps> = ({ isLightMode }) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1 }} // animación lenta y notoria
+            transition={{ duration: 1 }}
           >
             <div
               className={`flex flex-col md:flex-row rounded-lg shadow-lg overflow-hidden transition-colors duration-500 ${

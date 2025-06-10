@@ -1,0 +1,30 @@
+{
+  "titulo": "Nuestros aportes",
+  "descripcion": "Descubrí cómo BMO.IA aporta valor al resolver tus dudas técnicas de forma rápida, constante y adaptada a tus necesidades.",
+  "items": [
+    {
+      "title": "Eficiencia operativa",
+      "desc": "Respuestas optimizadas para resolver fallos comunes en computadoras, como errores del sistema, fallos de conexión y programas congelados."
+    },
+    {
+      "title": "Soporte ininterrumpido",
+      "desc": "Accedé a diagnósticos y soluciones para tu equipo las 24 horas del día, sin necesidad de asistencia humana."
+    },
+    {
+      "title": "Respuestas personalizadas",
+      "desc": "La IA analiza tu caso específico para darte pasos adecuados según el tipo de dispositivo, sistema operativo y tipo de fallo técnico."
+    },
+    {
+      "title": "Seguridad informática",
+      "desc": "Tus consultas sobre errores técnicos y estado del sistema se manejan con total confidencialidad bajo protocolos seguros."
+    },
+    {
+      "title": "Adaptabilidad técnica",
+      "desc": "Nuestro sistema gestiona múltiples solicitudes simultáneas, desde usuarios domésticos hasta empresas con cientos de equipos."
+    },
+    {
+      "title": "Mejora continua",
+      "desc": "Cada interacción contribuye al aprendizaje del sistema, mejorando su precisión al identificar y resolver fallos informáticos complejos."
+    }
+  ]
+}
