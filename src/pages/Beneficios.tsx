@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useOutletContext } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 import { motion, Variants } from 'framer-motion';
 import {
   FaLightbulb, FaBolt, FaClock, FaMobileAlt, FaUserShield,
