@@ -10,6 +10,7 @@ import historiaES from './locales/es/historia.json';
 import beneficiosES from './locales/es/beneficios.json';
 import chatES from './locales/es/chat.json';
 import footerES from './locales/es/footer.json';
+import imageES from './locales/es/image.json';
 
 import headerEN from './locales/en/header.json';
 import cardsEN from './locales/en/cards.json';
@@ -19,6 +20,7 @@ import historiaEN from './locales/en/historia.json';
 import beneficiosEN from './locales/en/beneficios.json';
 import chatEN from './locales/en/chat.json';
 import footerEN from './locales/en/footer.json';
+import imageEN from './locales/en/image.json';
 
 i18n
   .use(LanguageDetector)
@@ -33,7 +35,8 @@ i18n
           historia: historiaES,
           beneficios: beneficiosES,
           chat: chatES,
-          footer: footerES
+          footer: footerES,
+          image: imageES
       },
       en: {
         header: headerEN,
@@ -43,11 +46,12 @@ i18n
         historia: historiaEN,
         beneficios: beneficiosEN,
         chat: chatEN,
-        footer: footerEN
+        footer: footerEN,
+        image: imageEN
       }
     },
     fallbackLng: 'es',
-    ns: ['header', 'cards', 'slider', 'historia',  'beneficios', 'chat', 'common', 'footer', 'aportes'],
+    ns: ['header', 'cards', 'slider', 'historia',  'beneficios', 'chat', 'common', 'footer', 'aportes', 'image'],
     defaultNS: 'common',
     interpolation: {
       escapeValue: false
