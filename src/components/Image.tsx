@@ -1,5 +1,5 @@
 import React from 'react';
-import portadaBMO from '../Images/portadaBMO.jpg';
+import BMOIA from '../Images/BMOIA.png';
 
 interface ImageProps {
   isLightMode: boolean;
@@ -15,19 +15,19 @@ const Image: React.FC<ImageProps> = ({ isLightMode }) => {
 
   return (
     <div
-      className={`relative w-full h-[50vh] transition-colors duration-500 overflow-hidden ${
+      className={`relative w-full h-[70vh] transition-colors duration-500 overflow-hidden ${
         isLightMode ? 'bg-white' : 'bg-gray-900'
       }`}
     >
       <img
-        src={portadaBMO}
+        src={BMOIA}
         alt="Portada BMO"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
         <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded text-center">
-          Soporte técnico inteligente
+          Soporte Técnico de Computadoras
           <br />
           con IA
         </h1>
