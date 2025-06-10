@@ -1,11 +1,16 @@
 import React from 'react';
+
+import { useTranslation } from 'react-i18next';
 import BMOIA from '../Images/BMOIA.png';
+
 
 interface ImageProps {
   isLightMode: boolean;
 }
 
 const Image: React.FC<ImageProps> = ({ isLightMode }) => {
+  const { t } = useTranslation('image');
+
   const handleScroll = () => {
     const target = document.getElementById('next-section');
     if (target) {
@@ -26,10 +31,9 @@ const Image: React.FC<ImageProps> = ({ isLightMode }) => {
       />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
-        <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded text-center">
-          Soporte Técnico de Computadoras
-          <br />
-          con IA
+        <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded text-center whitespace-pre-line">
+          {t('title')}
+
         </h1>
         <button
           onClick={handleScroll}

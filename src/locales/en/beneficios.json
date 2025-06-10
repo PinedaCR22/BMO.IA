@@ -1,0 +1,38 @@
+{
+  "titulo": "Benefits of BMO.IA",
+  "descripcion": "Discover how our AI-based platform revolutionizes technical support for computers by providing instant, effective, and secure solutions for both home users and IT specialists.",
+  "items": [
+    {
+      "title": "Instant Diagnosis",
+      "desc": "Quickly detect common errors on your computer without needing to wait for human assistance."
+    },
+    {
+      "title": "24/7 Support",
+      "desc": "Constant technical assistance available at all times to resolve any issue with your device."
+    },
+    {
+      "title": "User-Friendly Interface",
+      "desc": "An intuitive design that facilitates interaction even for users with limited technical knowledge."
+    },
+    {
+      "title": "Information Security",
+      "desc": "Your data and technical queries are protected with high-security encrypted protocols."
+    },
+    {
+      "title": "Continuous Improvement",
+      "desc": "The AI learns with each diagnosis, improving accuracy in identifying technical failures."
+    },
+    {
+      "title": "Smart Scalability",
+      "desc": "Ability to serve multiple devices and simultaneous queries without losing speed or effectiveness."
+    }
+  ],
+  "guiaTitulo": "How to use the BMO.IA assistant",
+  "guia": [
+    "Go to the chat section from the main menu.",
+    "Type your query related to your computer: system errors, slowness, apps not opening, etc.",
+    "Click Send or press Enter to get a response.",
+    "Review the solution provided by the AI and follow the recommended steps.",
+    "When you finish your session, you can safely log out using the top right button."
+  ]
+}

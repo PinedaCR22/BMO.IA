@@ -1,0 +1,30 @@
+{
+  "titulo": "Our Contributions",
+  "descripcion": "Discover how BMO.IA adds value by resolving your technical questions quickly, consistently, and in a personalized way.",
+  "items": [
+    {
+      "title": "Operational Efficiency",
+      "desc": "Optimized responses to solve common computer failures, such as system errors, connection issues, and frozen programs."
+    },
+    {
+      "title": "Uninterrupted Support",
+      "desc": "Access diagnostics and solutions for your device 24/7 without human assistance."
+    },
+    {
+      "title": "Personalized Responses",
+      "desc": "The AI analyzes your specific case to provide appropriate steps based on device type, operating system, and issue."
+    },
+    {
+      "title": "Computer Security",
+      "desc": "Your queries about technical errors and system status are handled confidentially under secure protocols."
+    },
+    {
+      "title": "Technical Adaptability",
+      "desc": "Our system handles multiple simultaneous requests, from home users to companies with hundreds of devices."
+    },
+    {
+      "title": "Continuous Improvement",
+      "desc": "Each interaction contributes to the system's learning, improving its accuracy in identifying and solving complex issues."
+    }
+  ]
+}

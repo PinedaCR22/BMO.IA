@@ -1,9 +1,9 @@
-// src/components/Cards.tsx
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHistory, FaLightbulb, FaHandsHelping } from 'react-icons/fa';
 import { motion, Variants } from 'framer-motion';
 import { JSX } from 'react/jsx-runtime';
+import { useTranslation } from 'react-i18next';
 
 interface CardInfo {
   title: string;
@@ -16,43 +16,41 @@ interface CardsProps {
   isLightMode: boolean;
 }
 
-const cardData: CardInfo[] = [
-  {
-    title: 'Historia',
-    description:
-      'Conocé el origen y evolución de nuestra plataforma de soporte técnico especializado en computadoras, diseñada para asistir a usuarios con problemas cotidianos y complejos mediante el poder de la IA.',
-    link: '/historia',
-    icon: (
-      <FaHistory className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
-    ),
-  },
-  {
-    title: 'Beneficios',
-    description:
-      'Descubrí cómo nuestro soporte automatizado puede ayudarte a resolver fallos de hardware y software, mejorar el rendimiento y prevenir errores de forma eficiente y autónoma.',
-    link: '/beneficios',
-    icon: (
-      <FaLightbulb className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
-    ),
-  },
-  {
-    title: 'Aportes',
-    description:
-      'Enterate de cómo contribuimos al avance de la asistencia técnica para computadoras, promoviendo el aprendizaje automatizado y el acceso equitativo al soporte digital a través de IA.',
-    link: '/aportes',
-    icon: (
-      <FaHandsHelping className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
-    ),
-  },
-];
-
-// Variantes de animación: fade in y slide up
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
-
 const Cards: FC<CardsProps> = ({ isLightMode }) => {
+  const { t } = useTranslation('cards');
+
+  const cardData: CardInfo[] = [
+    {
+      title: t('historiaTitle'),
+      description: t('historiaDesc'),
+      link: '/historia',
+      icon: (
+        <FaHistory className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
+      ),
+    },
+    {
+      title: t('beneficiosTitle'),
+      description: t('beneficiosDesc'),
+      link: '/beneficios',
+      icon: (
+        <FaLightbulb className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
+      ),
+    },
+    {
+      title: t('aportesTitle'),
+      description: t('aportesDesc'),
+      link: '/aportes',
+      icon: (
+        <FaHandsHelping className="text-teal-500 text-5xl transition-all duration-300 group-hover:text-teal-700 group-hover:scale-125 group-hover:-translate-y-1" />
+      ),
+    },
+  ];
+
+  const fadeInUp: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section
       className={`max-w-7xl mx-auto px-4 py-16 transition-colors duration-500 ${
@@ -70,7 +68,7 @@ const Cards: FC<CardsProps> = ({ isLightMode }) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1 }} // <-- aquí ajustamos la velocidad
+            transition={{ duration: 1 }}
           >
             <div className="mb-6">{card.icon}</div>
             <h2 className="text-3xl font-bold mb-4">{card.title}</h2>
@@ -79,7 +77,7 @@ const Cards: FC<CardsProps> = ({ isLightMode }) => {
               to={card.link}
               className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-8 rounded transition-colors"
             >
-              Más información
+              {t('masInfo')}
             </Link>
           </motion.div>
         ))}

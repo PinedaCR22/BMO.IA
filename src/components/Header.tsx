@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaMoon, FaSun, FaBars } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
   isLightMode: boolean;
@@ -9,6 +10,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ isLightMode, toggleMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+ const { t, i18n } = useTranslation('header');
   const handleToggle = () => setMenuOpen(!menuOpen);
 
   return (
@@ -42,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ isLightMode, toggleMode }) => {
               isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
             }`}
           >
-            Aportes
+            {t('menu.aportes')}
           </Link>
           <Link
             to="/historia"
@@ -50,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ isLightMode, toggleMode }) => {
               isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
             }`}
           >
-            Historia
+            {t('menu.historia')}
           </Link>
           <Link
             to="/beneficios"
@@ -58,14 +60,26 @@ const Header: React.FC<HeaderProps> = ({ isLightMode, toggleMode }) => {
               isLightMode ? 'hover:text-blue-400' : 'hover:text-blue-600'
             }`}
           >
-            Beneficios
+            {t('menu.beneficios')}
           </Link>
           <Link
             to="/chat"
             className="bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 transition"
           >
-            Chat IA
+            {t('menu.chat')}
           </Link>
+
+          {/* Selector de idioma (escritorio) */}
+          <select
+            onChange={(e) => i18n.changeLanguage(e.target.value)}
+            value={i18n.language}
+            className={`bg-transparent border rounded px-2 py-1 outline-none ${
+              isLightMode ? 'text-black border-white' : 'text-white border-white'
+            }`}
+          >
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
         </div>
 
         {/* MENÚ HAMBURGUESA (mobile) */}
@@ -82,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ isLightMode, toggleMode }) => {
         </div>
       </nav>
 
-      {/* MENÚ MÓVIL (flujo normal) */}
+      {/* MENÚ MÓVIL */}
       {menuOpen && (
         <div className="md:hidden px-4 py-6 flex flex-col gap-4 items-center bg-inherit text-inherit shadow-md">
           <Link
@@ -92,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({ isLightMode, toggleMode }) => {
             }`}
             onClick={() => setMenuOpen(false)}
           >
-            Aportes
+            {t('menu.aportes')}
           </Link>
           <Link
             to="/historia"
@@ -101,7 +115,7 @@ const Header: React.FC<HeaderProps> = ({ isLightMode, toggleMode }) => {
             }`}
             onClick={() => setMenuOpen(false)}
           >
-            Historia
+            {t('menu.historia')}
           </Link>
           <Link
             to="/beneficios"
@@ -110,15 +124,30 @@ const Header: React.FC<HeaderProps> = ({ isLightMode, toggleMode }) => {
             }`}
             onClick={() => setMenuOpen(false)}
           >
-            Beneficios
+            {t('menu.beneficios')}
           </Link>
           <Link
             to="/chat"
             className="bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 transition"
             onClick={() => setMenuOpen(false)}
           >
-            Chat IA
+            {t('menu.chat')}
           </Link>
+
+          {/* Selector de idioma (móvil) */}
+          <select
+            onChange={(e) => {
+              i18n.changeLanguage(e.target.value);
+              setMenuOpen(false);
+            }}
+            value={i18n.language}
+            className={`bg-transparent border rounded px-2 py-1 outline-none ${
+              isLightMode ? 'text-black border-white' : 'text-white border-white'
+            }`}
+          >
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
         </div>
       )}
     </header>

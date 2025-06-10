@@ -1,8 +1,8 @@
-// src/components/SliderComponent.tsx
 import { FC } from 'react';
 import Slider from 'react-slick';
 import { motion, Variants } from 'framer-motion';
 import portadaBMO from '../Images/portadaBMO.jpg';
+import { useTranslation } from 'react-i18next';
 import viBMO from '../Images/viBMO.jpg';
 
 interface Slide {
@@ -37,6 +37,13 @@ const fadeInUp: Variants = {
 };
 
 const SliderComponent: FC<SliderProps> = ({ isLightMode }) => {
+  const { t } = useTranslation('slider');
+
+  const slides = t('slides', { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+  }>;
+
   const settings = {
     dots: true,
     infinite: true,
@@ -44,7 +51,7 @@ const SliderComponent: FC<SliderProps> = ({ isLightMode }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 5000
   };
 
   return (
@@ -57,7 +64,7 @@ const SliderComponent: FC<SliderProps> = ({ isLightMode }) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1 }} // animación lenta y notoria
+            transition={{ duration: 1 }}
           >
             <div
               className={`flex flex-col md:flex-row rounded-lg shadow-lg overflow-hidden transition-colors duration-500 ${

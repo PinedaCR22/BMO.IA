@@ -1,0 +1,30 @@
+{
+  "titulo": "Nuestra Historia",
+  "intro": "BMO.IA nació con el propósito de transformar la asistencia técnica en computadoras a través de inteligencia artificial avanzada. Desde nuestros inicios, nos enfocamos en brindar soporte accesible, rápido y confiable para resolver problemas comunes y críticos en sistemas de escritorio y portátiles. Nuestra evolución ha estado guiada por el compromiso de ofrecer soluciones técnicas precisas y personalizadas para usuarios individuales, técnicos y organizaciones.",
+  "tecnologiaTitulo": "Tecnología Avanzada",
+  "tecnologiaDesc": "Empleamos modelos de lenguaje entrenados en millones de casos reales de soporte técnico para computadoras. Esto nos permite brindar diagnósticos automáticos, asistencia contextual y soluciones efectivas para errores de software, hardware y rendimiento.",
+  "usuarioTitulo": "Enfoque en el Usuario",
+  "usuarioDesc": "Escuchamos a cada usuario, adaptando nuestras respuestas para cubrir necesidades reales como lentitud del sistema, fallos de red, problemas de arranque y más. Nuestro sistema aprende de cada interacción para ofrecer un soporte cada vez más humano y eficiente.",
+  "eventos": [
+    {
+      "titulo": "Mayo 2024: Lanzamiento Inicial",
+      "desc": "Presentamos la primera versión de BMO.IA, centrada en resolver preguntas frecuentes relacionadas con errores comunes en computadoras personales."
+    },
+    {
+      "titulo": "Octubre 2024: Mejoras de Modelo",
+      "desc": "Incorporamos comprensión contextual y memoria conversacional para mantener el seguimiento de problemas técnicos durante sesiones prolongadas de soporte."
+    },
+    {
+      "titulo": "Marzo 2025: Crecimiento de la Comunidad",
+      "desc": "Más de 10.000 usuarios activos confiaron en nuestra IA para resolver fallos en sus equipos, desde pantallas congeladas hasta errores de sistema operativo."
+    },
+    {
+      "titulo": "Junio 2025: Soporte Multilenguaje",
+      "desc": "Agregamos soporte para múltiples idiomas, facilitando la asistencia técnica a usuarios hispanohablantes, angloparlantes y otros perfiles globales."
+    },
+    {
+      "titulo": "Agosto 2025: Integración con Sistemas Externos",
+      "desc": "Integramos conectores con plataformas de tickets, centros de datos y sistemas de gestión IT, facilitando el monitoreo y resolución automatizada de incidencias."
+    }
+  ]
+}
