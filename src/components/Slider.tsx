@@ -3,10 +3,12 @@ import { FC } from 'react';
 import Slider from 'react-slick';
 import { motion, Variants } from 'framer-motion';
 import portadaBMO from '../Images/portadaBMO.jpg';
+import viBMO from '../Images/viBMO.jpg';
 
 interface Slide {
   title: string;
   description: string;
+  image: string;
 }
 
 interface SliderProps {
@@ -18,11 +20,13 @@ const slides: Slide[] = [
     title: 'Nuestra misión',
     description:
       'Brindar asistencia técnica confiable, rápida y especializada en computadoras, resolviendo dudas y problemas mediante inteligencia artificial avanzada y atención personalizada.',
+    image: portadaBMO,
   },
   {
     title: 'Nuestra visión',
     description:
       'Convertirnos en la plataforma líder en soporte técnico automatizado para computadoras, ofreciendo atención inteligente y soluciones innovadoras que optimicen el rendimiento de los equipos informáticos.',
+    image: viBMO,
   },
 ];
 
@@ -62,8 +66,8 @@ const SliderComponent: FC<SliderProps> = ({ isLightMode }) => {
             >
               <div className="w-full md:w-1/2 h-64 md:h-auto">
                 <img
-                  src={portadaBMO}
-                  alt="Portada BMO"
+                  src={slide.image}
+                  alt={slide.title}
                   className="w-full h-full object-cover"
                 />
               </div>
