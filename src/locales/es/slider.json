@@ -2,11 +2,13 @@
   "slides": [
     {
       "title": "Nuestra misión",
-      "description": "Brindar asistencia técnica confiable, rápida y especializada en computadoras, resolviendo dudas y problemas mediante inteligencia artificial avanzada y atención personalizada."
+      "description": "Brindar asistencia técnica confiable, rápida y especializada en computadoras, resolviendo dudas y problemas mediante inteligencia artificial avanzada y atención personalizada.",
+      "image": "/assets/MiBMO.jpg"
     },
     {
       "title": "Nuestra visión",
-      "description": "Convertirnos en la plataforma líder en soporte técnico automatizado para computadoras, ofreciendo atención inteligente y soluciones innovadoras que optimicen el rendimiento de los equipos informáticos."
+      "description": "Convertirnos en la plataforma líder en soporte técnico automatizado para computadoras, ofreciendo atención inteligente y soluciones innovadoras que optimicen el rendimiento de los equipos informáticos.",
+      "image": "/assets/viBMO.jpg"
     }
   ]
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useTranslation } from 'react-i18next';
-import BMOIA from '../Images/BMOIA.png';
+import BMOIA from '/assets/BMOIA.png';
 
 
 interface ImageProps {
